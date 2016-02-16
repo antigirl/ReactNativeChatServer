@@ -1,5 +1,5 @@
 var WebSocketServer = require('ws').Server;
-var wss = new WebSocketServer({host:'localhost', port: 3000 });
+var wss = new WebSocketServer({host:'localhost', port: process.env.PORT || 3000 });
 
 var onlineUsers = [];
 var colors = ['#F974A0', '#F50057', '#2196F3', '#009688', '#EF6C00', '#01579B', '#F44336' ];

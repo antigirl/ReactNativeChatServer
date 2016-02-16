@@ -23,7 +23,7 @@ wss.on('connection', function connection(ws) {
 
     if (onlineUsers.indexOf(user.id) === -1) {
         onlineUsers.push(user.id);
-    //    wss.broadcast('server{<>}' + user.name + ' just joined{<>}{<>}#5D70C2');
+        wss.broadcast('server{<>}' + user.name + ' just joined{<>}{<>}#5D70C2');
         console.log( user.name + ' just joined');
     }
 
@@ -31,15 +31,15 @@ wss.on('connection', function connection(ws) {
 
     wss.broadcast(user.id + dilem + user.msg + dilem + user.url + dilem + colors[currentUser]);
     console.log(user.name +' '+ colors[currentUser] +' '+ user.msg);
-    callme();
+    //callme();
   });
 
   ws.send('server{<>}Welcome {<>}{<>}#5D70C2');
 });
 
-function callme() {
-    setTimeout(function () {
-        //wss.broadcast('101545651839899423x' + dilem + 'The following example sets up' + dilem + 'https://scontent.xx.fbcdn.net/hprofile-xpa1/v/t1.0-1/s320x320/11062710_10154325436724942_8982235631316470093_n.jpg?oh=8763284be352d5222b87c12f7b5f2225&oe=5765BF83' + dilem + '#009688');
-        //callme();
-    }, 10000);
-}
+// function callme() {
+//     setTimeout(function () {
+//         //wss.broadcast('101545651839899423x' + dilem + 'The following example sets up' + dilem + 'https://scontent.xx.fbcdn.net/hprofile-xpa1/v/t1.0-1/s320x320/11062710_10154325436724942_8982235631316470093_n.jpg?oh=8763284be352d5222b87c12f7b5f2225&oe=5765BF83' + dilem + '#009688');
+//         //callme();
+//     }, 10000);
+// }
